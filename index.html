@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>З Днем Народження! 🎉</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Додаткові фонові елементи -->
+    <div class="bg-layer bg-layer-1"></div>
+    <div class="bg-layer bg-layer-2"></div>
+    <div class="bg-layer bg-layer-3"></div>
+    <div class="bg-layer bg-layer-4"></div>
+
+    <!-- Плаваючі фонові об'єкти -->
+    <div class="floating-bg floating-bg-1"></div>
+    <div class="floating-bg floating-bg-2"></div>
+    <div class="floating-bg floating-bg-3"></div>
+    <div class="floating-bg floating-bg-4"></div>
+    <div class="floating-bg floating-bg-5"></div>
+    <div class="floating-bg floating-bg-6"></div>
+
+    <!-- Паралакс фонові шари -->
+    <div class="parallax-bg parallax-bg-1"></div>
+    <div class="parallax-bg parallax-bg-2"></div>
+    <div class="parallax-bg parallax-bg-3"></div>
+
+    <div class="container">
+      <div class="birthday-card">
+        <div class="balloons">
+          <div class="balloon balloon-1">🎈</div>
+          <div class="balloon balloon-2">🎈</div>
+          <div class="balloon balloon-3">🎈</div>
+          <div class="balloon balloon-4">🎈</div>
+          <div class="balloon balloon-5">🎈</div>
+        </div>
+
+        <div class="main-content">
+          <h1 class="title">ДАРОВА ЙОБАНА</h1>
+          <div class="cake">🎂</div>
+          <h2 class="friend-name">ВЛАДИСЛАВЕ!</h2>
+
+          <div class="message">
+            <p>Бажаю тобі безмежного щастя,</p>
+            <p>міцного здоров'я та успіхів у всіх справах!</p>
+            <p>Нехай кожен день приносить радість та нові досягнення! ✨</p>
+          </div>
+
+          <div class="gifts">
+            <div class="gift">🎁</div>
+            <div class="gift">🎁</div>
+            <div class="gift">🎁</div>
+          </div>
+
+          <div class="celebration">
+            <div class="firework">🎆</div>
+            <div class="firework">🎇</div>
+            <div class="firework">✨</div>
+          </div>
+        </div>
+
+        <div class="footer">
+          <p>З найкращими побажаннями! 🥳</p>
+          <button class="celebration-btn" onclick="startCelebration()">
+            🎉 Почати святкування!
+          </button>
+          <button class="voucher-btn" onclick="startVerification()">
+            🎁 Отримати подарунок!
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="confetti-container" id="confetti"></div>
+
+    <!-- Модальне вікно з тестом верифікації -->
+    <div id="verificationModal" class="verification-modal">
+      <div class="verification-content">
+        <h2>А ТИ ТОЧНО ВЛАДИСЛАВ?</h2>
+
+        <div id="question1" class="question active">
+          <h3>Питання 1:</h3>
+          <p>ВВЕДИТЕ ПРАВИЛЬНОЕ КОЛИЧЕСТВО ТАНГО</p>
+          <input
+            type="number"
+            id="answer1"
+            placeholder="Введіть число"
+            min="0"
+          />
+          <button onclick="checkAnswer1()">Відповісти</button>
+        </div>
+
+        <div id="question2" class="question">
+          <h3>Питання 2:</h3>
+          <p>ЯКА КІЛЬКІСТЬ ТЕРАБАЙТІВ ПОРЕВА У ВЛАДА НА МЕГА?</p>
+          <input
+            type="number"
+            id="answer2"
+            placeholder="Введіть число"
+            min="0"
+          />
+          <button onclick="checkAnswer2()">Відповісти</button>
+        </div>
+
+        <div id="question3" class="question">
+          <h3>Питання 3:</h3>
+          <p>ВИБЕРІТЬ ПРАВИЛЬНУ СЕКСУАЛЬНУ ОРІЄНТАЦІЮ ВЛАДИСЛАВА</p>
+          <select id="answer3" class="orientation-select">
+            <option value="">Оберіть орієнтацію...</option>
+            <option value="straight">Гетеросексуальний</option>
+            <option value="gay">Гей</option>
+            <option value="lesbian">Лесбійка</option>
+            <option value="bisexual">Бісексуальний</option>
+            <option value="pansexual">Пансексуальний</option>
+            <option value="asexual">Асексуальний</option>
+            <option value="demisexual">Демісексуальний</option>
+            <option value="polysexual">Полісексуальний</option>
+            <option value="questioning">Сумніваюся</option>
+            <option value="other">Інше</option>
+          </select>
+          <button onclick="checkAnswer3()">Відповісти</button>
+        </div>
+
+        <div id="success" class="question">
+          <h3>
+            🎉МАЛАДЄЦ! АЛЕ ТЕПЕР ІІСУС ХРИСТОС ДІЗНАВСЯ, ЩО ТИ ГЕЙ, І ХОЧЕ
+            ЗРОБИТИ ТЕБЕ НАТУРАЛОМ! ТИ МАЄШ ЩОСЬ З ЦИМ ЗРОБИТИ!!!
+          </h3>
+
+          <button onclick="startMinigame()">
+            Врятувати свою гомосексуальність
+          </button>
+        </div>
+
+        <!-- Мінігра -->
+        <div id="question4" class="question">
+          <h3>🎮 МІНІГРА!</h3>
+          <div class="minigame-rules">
+            <p class="rules-text">
+              О НІ! ІІСУС ХРИСТОС ДІЗНАВСЯ, ЩО ТИ ГЕЙ, І ХОЧЕ ЗРОБИТИ ТЕБЕ
+              НАТУРАЛОМ!
+            </p>
+            <p class="rules-text">
+              НАТИСНИ 'ОТМЄНА', ЩОБ ЗАПОБІГТИ ЦЬОМУ НОНСЕНСУ! В ТЕБЕ 10 СЕКУНД!
+            </p>
+          </div>
+
+          <div class="timer-container">
+            <div class="timer" style="font-size: 25px">10</div>
+          </div>
+
+          <div class="game-area">
+            <img
+              src="cancel.jpg"
+              alt="Кнопка ОТМЄНА"
+              class="cancel-button"
+              id="cancelButton"
+              onclick="buttonClicked()"
+              style="position: relative; transform: scale(0.5)"
+            />
+          </div>
+        </div>
+
+        <!-- Екран перемоги -->
+        <div id="win-screen" class="fullscreen-overlay">
+          <div class="win-content">
+            <h2>ТИ ПЕРЕМІГ ЗЛО І ЗАСЛУЖИВ ПОДАРУНОК</h2>
+            <img
+              src="voucher.jpg"
+              alt="Подарунковий ваучер"
+              width="600"
+              class="win-voucher"
+            />
+            <button onclick="closeGameScreen()" class="game-close-btn">
+              Закрити
+            </button>
+          </div>
+        </div>
+
+        <!-- Екран поразки -->
+        <div id="lose-screen" class="fullscreen-overlay">
+          <div class="lose-content">
+            <h2>НАТУРАЛ!!!</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
